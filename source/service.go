@@ -1,8 +1,8 @@
 package main
 
-import {
-    "fmt"
-}
+import (
+  "fmt"
+)
 
 var version string = "0.0.1"
 
