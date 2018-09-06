@@ -4,6 +4,9 @@ import (
   "net/http"
 )
 
+// Following video: https://www.youtube.com/watch?v=bM6N-vgPlyQ&t=2059s
+// Left off at: 4:55
+
 var version string = "0.0.3"
 
 func main() {
