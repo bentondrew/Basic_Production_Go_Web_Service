@@ -3,7 +3,7 @@ RUN adduser -D -g '' gouser
 COPY source/ $GOPATH/src/web_service/server/
 WORKDIR $GOPATH/src/web_service/server/
 RUN go get -d -v
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/wiki
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags="-w -s" -o /go/bin/service
 
 FROM scratch
 LABEL maintainer="Benton Drew <benton.s.drew@drewantech.com>"
