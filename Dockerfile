@@ -10,7 +10,6 @@ LABEL maintainer="Benton Drew <benton.s.drew@drewantech.com>"
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 COPY --chown=gouser --from=builder /go/bin/ /web_service/
-COPY --chown=gouser static/ /web_service/
 USER gouser
 WORKDIR /web_service/
 EXPOSE 8080
