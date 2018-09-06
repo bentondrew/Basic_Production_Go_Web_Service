@@ -4,7 +4,7 @@ import {
     "fmt"
 }
 
-var version = "0.0.1"
+var version string = "0.0.1"
 
 func main() {
   fmt.Println(a: "Hello!")
