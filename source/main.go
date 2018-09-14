@@ -25,7 +25,7 @@ func main() {
     w.Header().Set("Content-Type", "text/plain; charset=utf-8")
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("Hello!"))})
-  srv := server.Nwe(mux, serviceAddr)
+  srv := server.New(mux, serviceAddr)
   err := srv.ListenAndServeTLS(certFile, keyFile)
   if err != nil {
     log.Fatalf("Server failed to start: %v", err)
