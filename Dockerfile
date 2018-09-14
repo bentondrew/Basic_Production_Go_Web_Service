@@ -17,4 +17,4 @@ ENV SERVICE_ADDR ":8080"
 USER gouser
 WORKDIR /service/
 EXPOSE 8080
-ENTRYPOINT ["main"]
+ENTRYPOINT ["/service/main"]
