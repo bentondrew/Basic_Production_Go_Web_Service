@@ -10,6 +10,10 @@ LABEL maintainer="Benton Drew <benton.s.drew@drewantech.com>"
 COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 COPY --chown=gouser --from=builder /go/bin/ /web_service/server/
+COPY tls/ /tls/
+ENV CERT_FILE /tls/local.localhost.cert
+ENV KEY_FILE /tls/local.localhost.key
+ENV SERVICE_ADDR ":8080"
 USER gouser
 WORKDIR /web_service/server/
 EXPOSE 8080
