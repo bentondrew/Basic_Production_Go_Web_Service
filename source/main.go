@@ -4,7 +4,7 @@ import (
   "net/http"
   "log"
   "os"
-  "server"
+  "service/server"
 )
 
 // Following video: https://www.youtube.com/watch?v=bM6N-vgPlyQ&t=2059s
