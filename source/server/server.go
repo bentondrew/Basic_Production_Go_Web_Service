@@ -1,26 +1,13 @@
-package main
+package server
 
 import (
   "crypto/tls"
   "net/http"
-  "log"
   "time"
-  "os"
 )
 
-// Following video: https://www.youtube.com/watch?v=bM6N-vgPlyQ&t=2059s
-// Left off at: 6:55
-// Repo for tutorial: https://github.com/dlsniper/gopherconuk
 
-var version string = "0.0.5"
-
-var (
-  certFile = os.Getenv("CERT_FILE")
-  keyFile = os.Getenv("KEY_FILE")
-  serviceAddr = os.Getenv("SERVICE_ADDR")
-)
-
-func NewServer(mux *http.ServeMux, serverAddress string) *http.Server {
+func New(mux *http.ServeMux, serverAddress string) *http.Server {
   // TLS setting from https://www.youtube.com/watch?v=bM6N-vgPlyQ&t=2059s
   // and https://github.com/dlsniper/gopherconuk.
   // Original source: https://blog.cloudflare.com/exposing-go-on-the-internet/
@@ -49,17 +36,4 @@ func NewServer(mux *http.ServeMux, serverAddress string) *http.Server {
     Handler: mux,
   }
   return srv
-}
-
-func main() {
-  mux := http.NewServeMux()
-  mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
-    w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello!"))})
-  srv := NewServer(mux, serviceAddr)
-  err := srv.ListenAndServeTLS(certFile, keyFile)
-  if err != nil {
-    log.Fatalf("Server failed to start: %v", err)
-  }
 }
