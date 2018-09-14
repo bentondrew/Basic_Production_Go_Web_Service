@@ -11,7 +11,7 @@ import (
 // Left off at: 6:55
 // Repo for tutorial: https://github.com/dlsniper/gopherconuk
 
-var version string = "0.0.5"
+var version string = "0.0.6"
 
 var (
   certFile = os.Getenv("CERT_FILE")
