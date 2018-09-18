@@ -27,7 +27,7 @@ func main() {
   logger := log.New(os.Stdout, "Basic Web Service", log.LstdFlags|log.Lshortfile)
   h := home.NewHandlers(logger)
   mux := http.NewServeMux()
-  mux.HandleFunc("/", h.Home())
+  h.SetupRoutes(mux)
   srv := server.New(mux, serviceAddr)
   logger.Println("Server starting.")
   err := srv.ListenAndServeTLS(certFile, keyFile)
