@@ -29,7 +29,7 @@ func (h *Handlers) Logger(next http.HandlerFunc) http.HandlerFunc {
 
 
 func (h *Handlers) SetupRoutes(mux *http.ServeMux) {
-  mux.HandleFunc("/", h.Logger(h.Home)
+  mux.HandleFunc("/", h.Logger(h.Home))
 }
 
 
