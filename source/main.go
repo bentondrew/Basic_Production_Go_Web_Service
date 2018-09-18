@@ -9,7 +9,7 @@ import (
 )
 
 // Following video: https://www.youtube.com/watch?v=bM6N-vgPlyQ&t=2059s
-// Left off at: 13.24
+// Left off at: 32:00
 // Repo for tutorial: https://github.com/dlsniper/gopherconuk
 // Test building from http://blog.setale.me/2018/01/06/Go-Tests-multistage-docker-builds-pipeline/
 
