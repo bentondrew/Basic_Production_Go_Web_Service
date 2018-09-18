@@ -13,7 +13,7 @@ import (
 // Repo for tutorial: https://github.com/dlsniper/gopherconuk
 
 
-var version string = "0.0.7"
+var version string = "0.0.8"
 
 
 var (
