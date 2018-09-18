@@ -1,9 +1,9 @@
 package home
 
-import {
+import (
   "net/http"
   "log"
-}
+)
 
 
 type Handlers struct {
