@@ -24,7 +24,7 @@ var (
 
 
 func main() {
-  logger := log.New(os.Stdout, "Basic Web Service", log.LstdFlags|log.Lshortfile)
+  logger := log.New(os.Stdout, "Basic Web Service ", log.LstdFlags|log.Lshortfile)
   h := home.NewHandlers(logger)
   mux := http.NewServeMux()
   h.SetupRoutes(mux)
